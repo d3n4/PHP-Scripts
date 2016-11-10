@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>B64 DECODER</title>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+<meta http-equiv="content-language" content="en" />
+<link rel="stylesheet" type="text/css" href="../../source-html/style_ie.css" />
+</head>
+
+<body>
+<!--
+<div style="visibility:visible"><iframe name="iframe" width="200" height="600"></iframe></div>
+-->
+<script type="text/javascript">
+function captencod(f){
+var valencod = f.elements.namedItem("encoded").value;
+document.getElementById("Encoded-Value-Entered").innerHTML = "Value Entered = "+valencod;
+}
+function codesubmit(f){
+f.action = 'http://vuln-itsec.mcmaster.ca/obfusc/online-decoder/decode-online.php';
+f.target ='self';
+f.submit();
+}
+</script>
+<h2 class="css-SectionTitle">Input Scrambled String:</h2><br>
+<form id="inputForm" name="inputForm" method="post" action=" ">
+	<div class='css-Note' id="css-Note">
+		Make sure not to enter any extra characters!.<br>
+		Max 2000 characters.
+	 	<br><br>
+		<textarea id="encoded" name="encoded" rows="15" cols="50"
+		  onkeydown="checkNumberOfCharacters('encoded','countchars');"
+			onkeyup="checkNumberOfCharacters('encoded','countchars');" wrap="off" tabindex="103"></textarea><br>
+		Characters entered:&nbsp;&nbsp;
+		<input type='text' id='countchars' class='css-Box100' readonly="readonly" value='0' />
+		<br><br>
+  	<span title="Execute"><input name="Execute" class="ps-button" value="Execute" style="clear:left; margin: 20px 0px 8px 55px;" type="submit" onclick="codesubmit(this.form)"></span>
+		 <span title="capture"><input name="capture" class="ps-button" value="C" style="clear:left; margin: 5px 0px 6px 65px;" type="button" onclick="captencod(this.form)"></span>
+	</div>
+</form>
+	<p id="Encoded-Value-Entered"></p>
+</body>
+</html>
+
