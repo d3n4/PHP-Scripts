@@ -63,7 +63,7 @@ echo "16) rot13-gzinfl-rot13-b64dec -> ", str_rot13(gzinflate(str_rot13(base64_d
 echo "16-16) eval-rot13-gzinfl-rot13-b64dec -> ", eval(str_rot13(gzinflate(str_rot13(base64_decode($str))))), "\n\n";
 
 /*
-echo" Encoding portion - incomplete"
+# - Encoding portion still incomplete - 
 echo "rawurlenc-b64dec-gzdeflate -> ", rawurlencode(base64_encode(gzdeflate($str))), "\n\n";
 
     base64_encode(gzdeflate('Code'))
